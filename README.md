@@ -10,3 +10,5 @@ This project contains and updated **playermarkers.js** file and a PHP script to 
 
 The PHP script can get skin information from [SkinRestorer](https://www.spigotmc.org/resources/skinsrestorer.2124/) plugin. This can be disabled.
 The PHP scripts uses GD library to create the avatar image used on the map.
+
+There **are** bugs I know about. Probably will be fixed in the future.
