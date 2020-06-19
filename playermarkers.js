@@ -7,8 +7,6 @@ var playerIcons = [];
 // Custom configuration
 var imageURL = "playermarkers/";
 var defaultImage = 'player.png';
-var usingSkinRestorer = true;
-var playerInfoURL = 'https://playerdb.co/api/player/minecraft/';
 
 var markerFile = 'playermarkers/markers.json';
 var refreshRate = 1000; 
@@ -46,9 +44,6 @@ function prepareInfoWindow(infoWindow, item) {
 }
 
 // Getting avatar image based on username.
-// The first method is looking up the Minecraft username and get the original skin.
-// TODO:
-// Second method, for offline users is to look up the corresponding skin from SkinRestorer plugin's storage.
 function getIcon(item, size, overlay) {
 	//console.log("getting icon: " + item.msg);
 	if(overlay == undefined || typeof(overlay) == undefined){
@@ -101,15 +96,11 @@ function getIcon(item, size, overlay) {
 				}
 			}
 		} else {
-			//console.log("offline player?");
-			// Grabbing official skin failed. Gathering offline skin information if SkinRestorer is installed.			
-			if(usingSkinRestorer){
-				// TODO: this is for now.
-				playerIcons.push({
-					'name'   : item.msg,
-					'icon' : defaultPlayerIcon
-				});	
-			}
+			// TODO: this is for now.
+			playerIcons.push({
+				'name'   : item.msg,
+				'icon' : defaultPlayerIcon
+			});	
 		}
 	});
 }
